@@ -1,0 +1,20 @@
+class Solution:
+    def reverse(self, x: int) -> int:
+        y = str(x)
+        if y[0] == '-':
+            y = y[1:]
+            y = y[::-1]
+            z = int('-' + y[::1])
+        else:
+            z = int(y[::-1])
+        if z >= -2**31 and z <= (2**31-1):
+            return z
+        return 0
+
+solution = Solution()
+x = 123
+print(solution.reverse(x))
+y = -123
+print(solution.reverse(y))
+z = 120
+print(solution.reverse(z))
